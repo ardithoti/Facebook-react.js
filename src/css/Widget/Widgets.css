@@ -1,0 +1,26 @@
+iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  margin-top:10px;
+  margin-bottom: 10px;
+  margin-right:10px;
+
+}
+
+.widgets{
+    position: relative;
+    top:0;
+    /* overflow: hidden; */
+    width: 300px;
+    padding-top: 30.25%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
