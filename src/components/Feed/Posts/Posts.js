@@ -10,13 +10,35 @@ import NearMeIcon from '@material-ui/icons/NearMe';
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ExpandMoreOutlined from "@material-ui/icons/ExpandMoreOutlined";
 import { useStateValue } from '../../../StateProvider';
+
 //css
 import "../../../css/Feed/Posts/Posts.css";
 
+
+function getTime(date){
+
+    let fullYear = date.toDateString();
+    let hour = date.getHours();
+    let minutes = date.getMinutes();
+    
+    if(hour < 10){
+        hour = '0' + hour.toString();
+    }
+    
+    if(minutes < 10){
+        minutes = '0' + minutes.toString();
+    }
+
+    return `${fullYear} ${hour}:${minutes}`;
+
+}
+
 function Posts({profilePic, image, username, timestamp, message}) {
     const [{user},dispatch] = useStateValue();
-
     
+
+
+    console.log("timestamp ",timestamp.getTime())
     return (
         <div className="posts">
             <div className="posts__top">
@@ -24,8 +46,8 @@ function Posts({profilePic, image, username, timestamp, message}) {
                 className="posts__avatar" />
             <div className="posts__topInfo">
                 <h3>{username}</h3>
-                <p>{new Date(timestamp?.toLocaleString()).toLocaleString()}</p>
-               
+                 {/* <p>{timestamp.toDateString() + " " + timestamp.getHours() + ":" + timestamp.getMinutes()}</p> */}
+                 <p>{getTime(timestamp)}</p>
             </div>
             </div>
 

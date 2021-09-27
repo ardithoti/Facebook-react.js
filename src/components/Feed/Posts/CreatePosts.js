@@ -18,19 +18,18 @@ import firebase from "../../../firebase";
 
 function CreatePosts() {
     const [{user},dispatch] = useStateValue();
-
-    const [input, setInput] = useState('');
-    const [imageUrl, setImageUrl] = useState('');
+    const [input, setInput] = useState("");
+    const [imageUrl, setImageUrl] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        db.collection('posts').add({
+        db.collection("posts").add({
             message: input,
-            timestamp: firebase,
             profilePic: user.photoURL,
             username: user.displayName,
             image: imageUrl,
+            timestamp: new Date()
         })
 
 
