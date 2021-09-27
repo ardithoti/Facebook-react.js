@@ -1,0 +1,16 @@
+
+.App{
+    background-color: white;
+ 
+    /* delete in the end */
+
+}
+
+.app__body{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #f1f2f5;
+
+  
+}
